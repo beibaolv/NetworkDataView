@@ -2,10 +2,10 @@ Cisco IOS Device Level Operation
 =====
 CLI Parser + Key Variable + Golden Baseline + Follow up
 
-### show processes cpu sorted
+## show processes cpu sorted
 The output shows how busy the CPU has been in the past 5 seconds, the past 1 minute, and the past 5 minutes. The output also shows the utilization percentage that each system process has used in these periods. 
 
-#### CLI Parser:
+### CLI Parser:
 ```
 Router#show processes cpu sorted
 CPU utilization for five seconds: 0%/0%; one minute: 0%; five minutes: 0%
@@ -22,7 +22,7 @@ CPU utilization for five seconds: 0%/0%; one minute: 0%; five minutes: 0%
   10           8         201         39  0.00%  0.00%  0.00%   0 WATCH_AFS  
 ```
 
-#### Key Variable:  
+### Key Variable:  
 1.CPU utilization for five seconds: `0%/0%`. 
 * The first number`0%`, tells how busy the CPU was in the past 5 seconds.
 * The second number`0%`, shows the percentage CPU time spent servicing/handling hardware interrupts.
@@ -33,12 +33,51 @@ CPU utilization for five seconds: 0%/0%; one minute: 0%; five minutes: 0%
 3.five minutes: `0%`.
 * The average utilization for past 5 minutes.
 
-#### Golden Baseline:  
+### Golden Baseline:  
 CPU Utilization depends on network enviroment scope / operation time, so it is various.
 
-#### Follow Up:  
+### Follow Up:  
 The more instances running, the greater the CPU utilization. Some conditions with High CPU Utilization :
 * Spanning Tree Convergence.
 * IP Routing Table Updates.
 * Heavy commands output, such as `debug`, `show tech`.
 * HSRP flapping.
+
+
+## show processes memory sort
+This command is often used to check the amount of a network device free memory. Each process maintains its own heap memory, which is taken from the system memory in blocks. The process reuses this memory as required. If all the memory that was requested in a block is no longer in use, then the process can return the memory block to the system. 
+
+### CLI Parser:
+```
+Router#show processes memory sort
+Processor Pool Total:  356640420 Used:   62461080 Free:  294179340
+
+ PID TTY  Allocated      Freed    Holding    Getbufs    Retbufs Process
+   0   0  118633760   65017296   47260744          0          0 *Init*          
+ 332   0    1406912      30424    1389568          0          0 EEM Server      
+   0   0   11187192    7901376    1057096    1709135          0 *Dead*          
+ 380   0     585888       2288     490896          0          0 BGP Router      
+   0   0          0          0     394848          0          0 *MallocLite*    
+ 206   0  243985576  235824864     338776          0          0 PIM Process     
+ 108   0  267416336  177109584     327624          0          0 CDP Protocol    
+   1   0     298784          0     311864          0          0 Chunk Manager   
+ 313   0     286536       4992     298624     100548          0 EEM ED Syslog   
+  38   0     266240       1664     277448          0          0 RF SCTPthread   
+ 275   0     260296          0     277376          0          0 QOS_MODULE_MAIN 
+ 279   0     201768          0     226848          0          0 VOIP_FMD_MAIN   
+ 314   0     211600       4992     223688      67468          0 EEM ED Generic  
+ 375   0     196600       1120     222648          0          0 MFIB_mrib_read  
+ ```
+ 
+ ### Key Variable:  
+1.Processor Pool Total: `356640420`. 
+*	Total amount of memory, in kilobytes, held for the Processor memory pool.
+
+2.Used:  `62461080`.
+* Total amount of used memory, in kilobytes, in the Processor memory pool. 
+
+3.Free: `294179340`.
+* Total amount of free memory, in kilobytes, in the Processor memory pool. 
+
+### Golden Baseline:  
+Memory depends on network device / process / configuration, so it is various.
