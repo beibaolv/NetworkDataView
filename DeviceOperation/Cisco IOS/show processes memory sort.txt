@@ -1,0 +1,22 @@
+Router#show processes memory sort
+Processor Pool Total:  356640420 Used:   62461080 Free:  294179340
+
+ PID TTY  Allocated      Freed    Holding    Getbufs    Retbufs Process
+   0   0  118633760   65017296   47260744          0          0 *Init*          
+ 332   0    1406912      30424    1389568          0          0 EEM Server      
+   0   0   11187192    7901376    1057096    1709135          0 *Dead*          
+ 380   0     585888       2288     490896          0          0 BGP Router      
+   0   0          0          0     394848          0          0 *MallocLite*    
+ 206   0  243985576  235824864     338776          0          0 PIM Process     
+ 108   0  267416336  177109584     327624          0          0 CDP Protocol    
+   1   0     298784          0     311864          0          0 Chunk Manager   
+ 313   0     286536       4992     298624     100548          0 EEM ED Syslog   
+  38   0     266240       1664     277448          0          0 RF SCTPthread   
+ 275   0     260296          0     277376          0          0 QOS_MODULE_MAIN 
+ 279   0     201768          0     226848          0          0 VOIP_FMD_MAIN   
+ 314   0     211600       4992     223688      67468          0 EEM ED Generic  
+ 375   0     196600       1120     222648          0          0 MFIB_mrib_read  
+ 334   0     170872       1568     194384          0          0 MRIB Trans      
+  76   0     160464        240     173304          0          0 VNM DSPRM MAIN  
+ 267   0     131816         80     156816          0          0 Crypto IKEv2    
+  89   0     368592     208360     147776          0          0 mDNS      
