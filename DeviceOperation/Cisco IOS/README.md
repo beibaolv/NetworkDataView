@@ -3,9 +3,9 @@ Cisco IOS Device Level Operation
 ## CLI Output + Key Variable + Baseline Value
 
 ### show processes cpu sorted
-The output shows how busy the CPU has been in the past 5 seconds, the past 1 minute, and the past 5 minutes. The output also shows the utilization percentage that each system process has used in these periods. 
+######The output shows how busy the CPU has been in the past 5 seconds, the past 1 minute, and the past 5 minutes. The output also shows the utilization percentage that each system process has used in these periods. 
 ====
-Router#show processes cpu sorted
+######Router#show processes cpu sorted
 CPU utilization for five seconds: `0%/0%`; one minute: `0%`; five minutes: `0%`
  PID Runtime(ms)     Invoked      uSecs   5Sec   1Min   5Min TTY Process 
   87      748392    95844227          7  0.16%  0.27%  0.28%   0 Ethernet Msec Ti 
