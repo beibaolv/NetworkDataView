@@ -23,15 +23,15 @@ CPU utilization for five seconds: 0%/0%; one minute: 0%; five minutes: 0%
 ```
 
 ### Key Variable:  
-1.CPU utilization for five seconds: `0%/0%`. 
-* The first number`0%`, tells how busy the CPU was in the past 5 seconds.
-* The second number`0%`, shows the percentage CPU time spent servicing/handling hardware interrupts.
+* CPU utilization for five seconds: `0`%/`0`%. 
+  1. [int] The first number tells how busy the CPU was in the past 5 seconds.
+  2. [int] The second number shows the percentage CPU time spent servicing/handling hardware interrupts.
 
-2.one minute: `0%`.
-* The average utilization for the last 1 minute.
+* one minute: `0`%.
+  1. [int] The average utilization for the last 1 minute.
 
-3.five minutes: `0%`.
-* The average utilization for past 5 minutes.
+* five minutes: `0`%.
+  1. [int] The average utilization for past 5 minutes.
 
 ### Golden Baseline:  
 CPU Utilization depends on network enviroment scope / operation time, so it is various.
@@ -70,14 +70,14 @@ Processor Pool Total:  356640420 Used:   62461080 Free:  294179340
  ```
  
  ### Key Variable:  
-1.Processor Pool Total: `356640420`. 
-*	Total amount of memory, in kilobytes, held for the Processor memory pool.
+* Processor Pool Total: `356640420`. 
+  1. [int] Total amount of memory, in kilobytes, held for the Processor memory pool.
 
-2.Used:  `62461080`.
-* Total amount of used memory, in kilobytes, in the Processor memory pool. 
+* Used:  `62461080`.
+  1. [int] Total amount of used memory, in kilobytes, in the Processor memory pool. 
 
-3.Free: `294179340`.
-* Total amount of free memory, in kilobytes, in the Processor memory pool. 
+* Free: `294179340`.
+  1. [int] Total amount of free memory, in kilobytes, in the Processor memory pool. 
 
 ### Golden Baseline:  
 Memory depends on network device / process / configuration, so it is various.
