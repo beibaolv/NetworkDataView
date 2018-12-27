@@ -1,0 +1,5 @@
+NSX-edge-34-1> show version 
+Name:                 vShield Edge
+Version:              6.2.5
+Build number:         4597866
+Kernel:               3.14.4

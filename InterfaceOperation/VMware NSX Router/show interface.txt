@@ -1,0 +1,89 @@
+NSX-edge-34-1> show interface 
+Interface VDR is up, line protocol is up
+  index 12 metric 1 mtu 1500 <UP,BROADCAST,RUNNING,NOARP>
+  HWaddr: ce:fb:e0:30:55:a5
+  inet6 fe80::ccfb:e0ff:fe30:55a5/64
+  proxy_arp: disabled
+  Half-duplex, 0Mb/s
+    input packets 0, bytes 0, dropped 0, multicast packets 0
+    input errors 0, length 0, overrun 0, CRC 0, frame 0, fifo 0, missed 0
+    output packets 0, bytes 0, dropped 0
+    output errors 0, aborted 0, carrier 0, fifo 0, heartbeat 0, window 0
+    collisions 0
+Interface br-sub is up, line protocol is up
+  index 13 metric 1 mtu 1500 <UP,BROADCAST,RUNNING,MULTICAST>
+  inet6 fe80::1888:deff:fe85:ce3b/64
+  proxy_arp: disabled
+  Half-duplex, 0Mb/s
+    input packets 0, bytes 0, dropped 0, multicast packets 0
+    input errors 0, length 0, overrun 0, CRC 0, frame 0, fifo 0, missed 0
+    output packets 7, bytes 738, dropped 0
+    output errors 0, aborted 0, carrier 0, fifo 0, heartbeat 0, window 0
+    collisions 0
+Interface lo is up, line protocol is up
+  index 1 metric 1 mtu 65536 <UP,LOOPBACK,RUNNING>
+  inet 127.0.0.1/8
+  inet6 ::1/128
+  proxy_arp: disabled
+  Half-duplex, 0Mb/s
+    input packets 631176, bytes 164940355, dropped 0, multicast packets 0
+    input errors 0, length 0, overrun 0, CRC 0, frame 0, fifo 0, missed 0
+    output packets 631176, bytes 164940355, dropped 0
+    output errors 0, aborted 0, carrier 0, fifo 0, heartbeat 0, window 0
+    collisions 0
+Interface vNic_0 is up, line protocol is up
+  index 2 metric 1 mtu 1500 <UP,BROADCAST,RUNNING,MULTICAST>
+  HWaddr: 00:50:56:93:64:a0
+  inet 172.1.1.1/24 broadcast 172.1.1.255
+  inet6 fe80::250:56ff:fe93:64a0/64
+  proxy_arp: disabled
+  Full-duplex, 10000Mb/s
+    input packets 3730549, bytes 358298420, dropped 75, multicast packets 28
+    input errors 0, length 0, overrun 0, CRC 0, frame 0, fifo 0, missed 0
+    output packets 6303887, bytes 462326620, dropped 0
+    output errors 0, aborted 0, carrier 0, fifo 0, heartbeat 0, window 0
+    collisions 0
+Interface vNic_4 is down
+  index 3 metric 1 mtu 1500 <BROADCAST,MULTICAST>
+  HWaddr: 00:50:56:93:3e:90
+  proxy_arp: disabled
+  Half-duplex, 0Mb/s
+    input packets 0, bytes 0, dropped 0, multicast packets 0
+    input errors 0, length 0, overrun 0, CRC 0, frame 0, fifo 0, missed 0
+    output packets 0, bytes 0, dropped 0
+    output errors 0, aborted 0, carrier 0, fifo 0, heartbeat 0, window 0
+    collisions 0
+Interface vNic_8 is up, line protocol is up
+  index 4 metric 1 mtu 1500 <UP,BROADCAST,RUNNING,MULTICAST>
+  HWaddr: 00:50:56:93:4a:39
+  inet 172.1.100.2/30 broadcast 172.1.100.3
+  inet6 fe80::250:56ff:fe93:4a39/64
+  proxy_arp: disabled
+  Full-duplex, 10000Mb/s
+    input packets 50648805, bytes 3192020275, dropped 1355, multicast packets 3
+    input errors 0, length 0, overrun 0, CRC 0, frame 0, fifo 0, missed 0
+    output packets 47363991, bytes 2924047536, dropped 0
+    output errors 0, aborted 0, carrier 0, fifo 0, heartbeat 0, window 0
+    collisions 0
+Interface vNic_1 is up, line protocol is up
+  index 5 metric 1 mtu 1500 <UP,BROADCAST,RUNNING,MULTICAST>
+  HWaddr: 00:50:56:93:8f:58
+  inet 172.2.1.254/24 broadcast 172.2.1.255
+  inet6 fe80::250:56ff:fe93:8f58/64
+  proxy_arp: disabled
+  Full-duplex, 10000Mb/s
+    input packets 3806329, bytes 332331070, dropped 0, multicast packets 410074
+    input errors 0, length 0, overrun 0, CRC 0, frame 0, fifo 0, missed 0
+    output packets 3288630, bytes 309306102, dropped 0
+    output errors 0, aborted 0, carrier 0, fifo 0, heartbeat 0, window 0
+    collisions 0
+Interface vNic_5 is down
+  index 6 metric 1 mtu 1500 <BROADCAST,MULTICAST>
+  HWaddr: 00:50:56:93:2b:ba
+  proxy_arp: disabled
+  Half-duplex, 0Mb/s
+    input packets 0, bytes 0, dropped 0, multicast packets 0
+    input errors 0, length 0, overrun 0, CRC 0, frame 0, fifo 0, missed 0
+    output packets 0, bytes 0, dropped 0
+    output errors 0, aborted 0, carrier 0, fifo 0, heartbeat 0, window 0
+    collisions 0

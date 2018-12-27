@@ -1,11 +1,11 @@
 Cisco IOS Device Level Operation
 =====
-CLI Parser + Key Variable + Golden Baseline + Follow up
+Data Source + Key Variable + Golden Baseline + Follow up
 
 ## Show Processes CPU Sorted
 The output shows how busy the CPU has been in the past 5 seconds, the past 1 minute, and the past 5 minutes. The output also shows the utilization percentage that each system process has used in these periods. 
 
-### CLI Parser:
+### Data Source:
 ```
 Router#show processes cpu sorted
 CPU utilization for five seconds: 0%/0%; one minute: 0%; five minutes: 0%
@@ -47,7 +47,7 @@ The more instances running, the greater the CPU utilization. Some conditions wit
 ## Show Processes Memory Sort
 This command is often used to check the amount of a network device free memory. Each process maintains its own heap memory, which is taken from the system memory in blocks. The process reuses this memory as required. If all the memory that was requested in a block is no longer in use, then the process can return the memory block to the system. 
 
-### CLI Parser:
+### Data Source:
 ```
 Router#show processes memory sort
 Processor Pool Total:  356640420 Used:   62461080 Free:  294179340

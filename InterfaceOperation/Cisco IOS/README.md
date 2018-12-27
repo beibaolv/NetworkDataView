@@ -1,11 +1,11 @@
 # Cisco IOS Interface Level Operation
 
-CLI Parser + Key Variable + Golden Baseline + Follow up
+Data Source + Key Variable + Golden Baseline + Follow up
 
 ## Show Interface $INTF
 To display statistics for input interface configured on the network device, the resulting output varies, depending on the network for which an interface has been configured. The output of Router and Switch are almost same, and the only difference is Router has IP address like `Internet address is 10.10.10.10/30`; Switch has media information like `Full-duplex, Auto-speed, media type is RJ45`.
 
-### CLI Parser:
+### Data Source:
 ```
 Switch#show interfaces Ethernet0/0
 Ethernet0/0 is up, line protocol is up (connected) 
@@ -96,3 +96,94 @@ Ethernet0/0 is up, line protocol is up (connected)
 * Check neighbor interface status.
 * Compare the neighbor interface configuration with golden baseline.
 
+----
+
+## Show Interfaces Status
+To view summary or detailed information on the switch ports.
+
+### Data Source:
+```
+Switch#show interfaces status
+
+Port      Name               Status       Vlan       Duplex  Speed Type 
+Et0/0                        connected    55           full   auto RJ45
+Et0/1                        connected    55           full   auto RJ45
+Et0/2                        connected    5            full   auto RJ45
+Et0/3                        connected    5            full   auto RJ45
+Et1/0                        connected    5            full   auto RJ45
+Et1/1                        connected    5            full   auto RJ45
+Et1/2                        connected    5            full   auto RJ45
+Et1/3                        connected    5            full   auto RJ45
+Et2/0                        connected    5            full   auto RJ45
+Et2/1                        connected    5            full   auto RJ45
+Et2/2                        connected    5            full   auto RJ45
+Et2/3                        connected    5            full   auto RJ45
+Et3/0                        connected    5          a-full   auto RJ45
+Et3/1                        connected    5          a-full   auto RJ45
+Et3/2                        connected    5          a-full   auto RJ45
+Et3/3                        connected    5          a-full   auto RJ45
+Et4/0                        connected    5          a-full   auto RJ45
+Et4/1                        connected    5          a-full   auto RJ45
+Et4/2                        connected    5          a-full   auto RJ45
+Et4/3                        connected    5          a-full   auto RJ45
+```
+
+### Key Variable:  
+* [table] 
+
+   | Port | Name | Status | Vlan | Duplex | Speed | Type |
+   | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+   | Et0/0  |  | connected | 55 | full | auto | RJ45 |
+   | Et3/0  |  | connected | 5 | a-full | auto | RJ45 |
+
+  1. [str] `Port` - Switch port.
+  2. [str] `Name` - Switch port description.
+  3. [str] `Status` - Switch port connection status.
+  4. [int] `Vlan` - Switch port access vlan number.
+  5. [str] `Duplex` - Switch port duplex information.
+  6. [str] `Speed` - Switch port speed information.
+  7. [str] `Type` - Switch port media type information.
+
+----
+
+## Show IP Interface Brief
+To view summary or detailed information on the router ports.
+
+### Data Source:
+```
+Router#show ip interface brief
+Interface                  IP-Address      OK? Method Status                Protocol
+Ethernet0/0                203.3.17.2      YES TFTP   up                    up      
+Ethernet0/1                123.20.1.10     YES TFTP   up                    up      
+Ethernet0/2                123.20.1.18     YES TFTP   up                    up      
+Ethernet0/3                unassigned      YES TFTP   up                    up      
+Ethernet1/0                unassigned      YES TFTP   administratively down down    
+Ethernet1/1                unassigned      YES TFTP   administratively down down    
+Ethernet1/2                unassigned      YES TFTP   administratively down down    
+Ethernet1/3                unassigned      YES TFTP   administratively down down    
+Serial2/0                  unassigned      YES TFTP   administratively down down    
+Serial2/1                  unassigned      YES TFTP   administratively down down    
+Serial2/2                  unassigned      YES TFTP   administratively down down    
+Serial2/3                  unassigned      YES TFTP   administratively down down    
+Serial3/0                  unassigned      YES TFTP   administratively down down    
+Serial3/1                  unassigned      YES TFTP   administratively down down    
+Serial3/2                  unassigned      YES TFTP   administratively down down    
+Serial3/3                  unassigned      YES TFTP   administratively down down    
+Loopback0                  123.17.17.17    YES TFTP   up                    up      
+Tunnel0                    10.18.19.1      YES TFTP   up                    up      
+Tunnel1                    123.20.1.10     YES unset  up                    up      
+
+```
+
+### Key Variable:  
+* [table] 
+
+   | Interface | IP-Address | Status | Protocol |
+   | :--- | :--- | :--- | :--- |
+   | Ethernet0/0 | 203.3.17.2 | up | up |
+   | Ethernet1/0 | unassigned | administratively down | down |
+
+  1. [str] `Interface` - Router interface.
+  2. [str] `IP-Address` - Router interface ip address.
+  3. [str] `Status` - Router interface operation status.
+  4. [int] `Protocol` - Router interface protocol status.
