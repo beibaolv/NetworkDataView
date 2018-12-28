@@ -1,0 +1,21 @@
+Router#show ip interface brief
+Interface                  IP-Address      OK? Method Status                Protocol
+Ethernet0/0                203.3.17.2      YES TFTP   up                    up      
+Ethernet0/1                123.20.1.10     YES TFTP   up                    up      
+Ethernet0/2                123.20.1.18     YES TFTP   up                    up      
+Ethernet0/3                unassigned      YES TFTP   up                    up      
+Ethernet1/0                unassigned      YES TFTP   administratively down down    
+Ethernet1/1                unassigned      YES TFTP   administratively down down    
+Ethernet1/2                unassigned      YES TFTP   administratively down down    
+Ethernet1/3                unassigned      YES TFTP   administratively down down    
+Serial2/0                  unassigned      YES TFTP   administratively down down    
+Serial2/1                  unassigned      YES TFTP   administratively down down    
+Serial2/2                  unassigned      YES TFTP   administratively down down    
+Serial2/3                  unassigned      YES TFTP   administratively down down    
+Serial3/0                  unassigned      YES TFTP   administratively down down    
+Serial3/1                  unassigned      YES TFTP   administratively down down    
+Serial3/2                  unassigned      YES TFTP   administratively down down    
+Serial3/3                  unassigned      YES TFTP   administratively down down    
+Loopback0                  123.17.17.17    YES TFTP   up                    up      
+Tunnel0                    10.18.19.1      YES TFTP   up                    up      
+Tunnel1                    123.20.1.10     YES unset  up                    up      

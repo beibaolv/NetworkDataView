@@ -27,17 +27,13 @@ CPU utilization for five seconds: 0%/0%; one minute: 0%; five minutes: 0%
   
   2.[int:5s_cpu_hi_util] The second number shows the percentage CPU time spent servicing/handling hardware interrupts.
 
-* one minute: `0`%.
-  
-  1.[int:1min_cpu_util] The average utilization for the last 1 minute.
+* [int:1min_cpu_util] one minute: `0`% - The average utilization for the last 1 minute.
 
-* five minutes: `0`%.
-
-  1.[int:5min_cpu_util] The average utilization for past 5 minutes.
+* [int:5min_cpu_util] five minutes: `0`% - The average utilization for past 5 minutes.
 
 ### Data View:  
 
-1.[device-unit] [logic:range] **1min_cpu_util** 
+1.[device-unit] [logic:Range] **1min_cpu_util** 
 
 ### Golden Baseline:  
 CPU Utilization depends on network enviroment scope / operation time, so it is various.
@@ -75,18 +71,15 @@ Processor Pool Total:  356640420 Used:   62461080 Free:  294179340
  375   0     196600       1120     222648          0          0 MFIB_mrib_read  
  ```
 
-* Processor Pool Total: `356640420`. 
-  1.[int:proc_mem_total] Total amount of memory, in kilobytes, held for the Processor memory pool.
+* [int:proc_mem_total] Processor Pool Total: `356640420` - Total amount of memory, in kilobytes, held for the Processor memory pool.
 
-* Used:  `62461080`.
-  1.[int:proc_mem_used] Total amount of used memory, in kilobytes, in the Processor memory pool. 
+* [int:proc_mem_used] Used:  `62461080` - Total amount of used memory, in kilobytes, in the Processor memory pool. 
 
-* Free: `294179340`.
-  1.[int:proc_mem_free] Total amount of free memory, in kilobytes, in the Processor memory pool. 
+* [int:proc_mem_free] Free: `294179340` -  Total amount of free memory, in kilobytes, in the Processor memory pool. 
 
 ### Data View:  
 
-1.[device-unit] [logic:range] **proc_mem_usage** =  (proc_mem_used/proc_mem_total)*100%
+1.[device-unit] [logic:Range] **proc_mem_usage** =  (proc_mem_used/proc_mem_total)*100%. 
 
 ### Golden Baseline:  
 Memory depends on network device / process / configuration, so it is various.
