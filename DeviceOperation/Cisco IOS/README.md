@@ -1,11 +1,10 @@
 Cisco IOS Device Level Operation
 =====
-Data Source + Key Variable + Golden Baseline + Follow up
 
 ## Show Processes CPU Sorted
 The output shows how busy the CPU has been in the past 5 seconds, the past 1 minute, and the past 5 minutes. The output also shows the utilization percentage that each system process has used in these periods. 
 
-### Data Source:
+### Data Parser:
 ```
 Router#show processes cpu sorted
 CPU utilization for five seconds: 0%/0%; one minute: 0%; five minutes: 0%
@@ -21,19 +20,24 @@ CPU utilization for five seconds: 0%/0%; one minute: 0%; five minutes: 0%
    8           0           1          0  0.00%  0.00%  0.00%   0 DiscardQ Backgro 
   10           8         201         39  0.00%  0.00%  0.00%   0 WATCH_AFS  
 ```
-
-### Key Variable:  
+ 
 * CPU utilization for five seconds: `0`%/`0`%. 
   
-  1.[int] The first number tells how busy the CPU was in the past 5 seconds.
+  1.[int:5s_cpu_util] The first number tells how busy the CPU was in the past 5 seconds.
   
-  2.[int] The second number shows the percentage CPU time spent servicing/handling hardware interrupts.
+  2.[int:5s_cpu_hi_util] The second number shows the percentage CPU time spent servicing/handling hardware interrupts.
 
 * one minute: `0`%.
-  1. [int] The average utilization for the last 1 minute.
+  
+  1.[int:1min_cpu_util] The average utilization for the last 1 minute.
 
 * five minutes: `0`%.
-  1. [int] The average utilization for past 5 minutes.
+
+  1.[int:5min_cpu_util] The average utilization for past 5 minutes.
+
+### Data View:  
+
+1.[device-unit] [logic:range] **1min_cpu_util** 
 
 ### Golden Baseline:  
 CPU Utilization depends on network enviroment scope / operation time, so it is various.
@@ -49,7 +53,7 @@ The more instances running, the greater the CPU utilization. Some conditions wit
 ## Show Processes Memory Sort
 This command is often used to check the amount of a network device free memory. Each process maintains its own heap memory, which is taken from the system memory in blocks. The process reuses this memory as required. If all the memory that was requested in a block is no longer in use, then the process can return the memory block to the system. 
 
-### Data Source:
+### Data Parser:
 ```
 Router#show processes memory sort
 Processor Pool Total:  356640420 Used:   62461080 Free:  294179340
@@ -70,16 +74,19 @@ Processor Pool Total:  356640420 Used:   62461080 Free:  294179340
  314   0     211600       4992     223688      67468          0 EEM ED Generic  
  375   0     196600       1120     222648          0          0 MFIB_mrib_read  
  ```
- 
- ### Key Variable:  
+
 * Processor Pool Total: `356640420`. 
-  1. [int] Total amount of memory, in kilobytes, held for the Processor memory pool.
+  1.[int:proc_mem_total] Total amount of memory, in kilobytes, held for the Processor memory pool.
 
 * Used:  `62461080`.
-  1. [int] Total amount of used memory, in kilobytes, in the Processor memory pool. 
+  1.[int:proc_mem_used] Total amount of used memory, in kilobytes, in the Processor memory pool. 
 
 * Free: `294179340`.
-  1. [int] Total amount of free memory, in kilobytes, in the Processor memory pool. 
+  1.[int:proc_mem_free] Total amount of free memory, in kilobytes, in the Processor memory pool. 
+
+### Data View:  
+
+1.[device-unit] [logic:range] **proc_mem_usage** =  (proc_mem_used/proc_mem_total)*100%
 
 ### Golden Baseline:  
 Memory depends on network device / process / configuration, so it is various.
