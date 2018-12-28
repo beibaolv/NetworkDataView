@@ -24,8 +24,10 @@ CPU utilization for five seconds: 0%/0%; one minute: 0%; five minutes: 0%
 
 ### Key Variable:  
 * CPU utilization for five seconds: `0`%/`0`%. 
-  1. [int] The first number tells how busy the CPU was in the past 5 seconds.
-  2. [int] The second number shows the percentage CPU time spent servicing/handling hardware interrupts.
+  
+  1.[int] The first number tells how busy the CPU was in the past 5 seconds.
+  
+  2.[int] The second number shows the percentage CPU time spent servicing/handling hardware interrupts.
 
 * one minute: `0`%.
   1. [int] The average utilization for the last 1 minute.
